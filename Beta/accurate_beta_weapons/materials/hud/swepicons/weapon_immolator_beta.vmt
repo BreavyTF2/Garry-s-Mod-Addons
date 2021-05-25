@@ -1,0 +1,9 @@
+"UnlitGeneric"
+{
+	"$basetexture" "HUD/swepicons/weapon_immolator_beta"
+	 $color "[ 1.8 1.5 0 ]"
+	"$additive" "1"
+	"$vertexcolor" "1"
+	"$vertexalpha" "1"
+	"$ignorez"     "1"
+}

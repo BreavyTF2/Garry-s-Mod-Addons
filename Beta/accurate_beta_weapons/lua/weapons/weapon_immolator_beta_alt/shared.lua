@@ -16,6 +16,7 @@ SWEP.SlotPos = 6
 SWEP.DrawAmmo = false
 SWEP.DrawCrosshair = true
 SWEP.ViewModelFOV = 58
+SWEP.AutoIconAngle = Angle(0,0,-25) //AutoIcons Fix
 SWEP.ViewModelFlip = false
 SWEP.DrawWeaponInfoBox	= true
 SWEP.Purpose = "A piece of forgotten combine technology, a Cremator's go to."

@@ -17,6 +17,7 @@ SWEP.Slot = 0
 SWEP.SlotPos = 4
 SWEP.DrawAmmo = true
 SWEP.DrawCrosshair = true
+SWEP.AutoIconAngle = Angle(60,0,0)//AutoIcons Fix
 SWEP.ViewModelFOV = GetConVar( "viewmodel_fov" )
 SWEP.ViewModelFlip = false
 SWEP.UseHands = true

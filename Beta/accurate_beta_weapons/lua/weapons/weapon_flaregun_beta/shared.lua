@@ -14,6 +14,7 @@ SWEP.SlotPos = 5
 SWEP.DrawAmmo = true
 SWEP.DrawCrosshair = true
 SWEP.ViewModelFOV = 54
+SWEP.AutoIconAngle = Angle(0,0,90)//AutoIcons Fix
 SWEP.ViewModelFlip = false
 SWEP.WepSelectIcon = surface.GetTextureID("HUD/swepicons/weapon_flaregun_beta") 
 SWEP.DrawWeaponInfoBox	= true

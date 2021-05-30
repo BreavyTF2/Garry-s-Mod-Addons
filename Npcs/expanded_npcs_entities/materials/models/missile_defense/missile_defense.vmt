@@ -1,4 +1,5 @@
 "VertexLitGeneric"
 {
 "$basetexture" "models/Missile_Defense/Missile_Defense"
+	"$surfaceprop" "Metal"
 }

@@ -52,7 +52,7 @@ SWEP.AdminSpawnable = false
 SWEP.ViewModel = "models/weapons/c_flaregun_beta.mdl"
 SWEP.WorldModel = "models/weapons/w_flaregun_beta.mdl"
 
-game.AddAmmoType( { name = "FlareRound", dmgtype = DMG_BURN, tracer = TRACER_LINE, 	plydmg = GetConVar( "sk_plr_dmg_flare_round" ):GetInt(), npcdmg = GetConVar( "sk_npc_dmg_flare_round" ):GetInt(), force =  600} )
+game.AddAmmoType( { name = "FlareRound", dmgtype = DMG_BURN, tracer = TRACER_LINE, 	plydmg = GetConVar( "sk_plr_dmg_flare_round" ):GetInt(), npcdmg = GetConVar( "sk_npc_dmg_flare_round" ):GetInt(), maxcarry = 20, force =  600} )
 if ( CLIENT ) then language.Add( "FlareRound_ammo", "Flares" ) end
 SWEP.Primary.Recoil            = 2
 SWEP.Primary.Sound = Sound( "weapons/flaregun/fire.wav" )

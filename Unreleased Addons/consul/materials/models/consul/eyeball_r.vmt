@@ -1,0 +1,5 @@
+"eyes"
+{
+	"$basetexture" "models/consul/eyeball_r"
+	"$iris" "models/consul/pupil_r"
+}

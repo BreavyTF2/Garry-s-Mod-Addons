@@ -1,0 +1,12 @@
+"VertexLitGeneric"
+{
+	$baseTexture	"models\HDTF\mitchell3\mitchell_head\mitchell_head_older"
+	$bumpmap	"models\HDTF\mitchell3\mitchell_head\mitchell_head_older_normal"
+	$phongexponenttexture	"models\HDTF\mitchell3\mitchell_head\mitchell_head_older_glossiness"
+
+	$phong		1
+	$phongtint	"[ 1 1 1 ]"
+	$phongboost	7
+	//$phongexponent	3
+	$phongfresnelranges "[ .1 .5 1 ]"
+}

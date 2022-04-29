@@ -1,0 +1,11 @@
+VertexlitGeneric
+{
+	$basetexture	"models\HDTF\mitchell3\glove"
+	$bumpmap	"models\HDTF\mitchell3\glove_normal"
+
+	$phong		1
+	$phongtint	"[ 1 1 1 ]"
+	$phongboost	1
+	$phongexponent	8
+	$phongfresnelranges "[.5 .5 1 ]"		
+}

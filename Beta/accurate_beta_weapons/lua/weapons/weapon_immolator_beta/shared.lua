@@ -19,7 +19,7 @@ SWEP.ViewModelFOV = 58
 SWEP.AutoIconAngle = Angle(0,0,-25) //AutoIcons Fix
 SWEP.ViewModelFlip = false
 SWEP.DrawWeaponInfoBox	= true
-SWEP.Purpose = "A piece of forgotten combine technology, a Cremator's go to."
+SWEP.Purpose = "A forgotten piece of combine technology, a Cremator's go to."
 SWEP.Instructions = "Hold MOUSE1 to immolate."
 SWEP.UseHands = true
 SWEP.WepSelectIcon = surface.GetTextureID("HUD/swepicons/weapon_immolator_beta") 
@@ -99,36 +99,13 @@ end
 
 function SWEP:PrimaryAttack()
 
-self.Weapon:SetNextPrimaryFire( CurTime() + 0.01)
+	self.Weapon:SetNextPrimaryFire( CurTime() + 0.01)
 	if self:IsUnderWater() then return end
-	if (!SERVER) then return end
-
-
-    local tr, vm, muzzle, effectdata
-    
-    
-    
-    tr = { }
-    
-    tr.start = self.Owner:GetShootPos( )
-    tr.filter = self.Owner
-    tr.endpos = tr.start + self.Owner:GetAimVector( ) * 4096
-    tr.mins = Vector( ) * -1
-    tr.maxs = Vector( ) * 1
-    
-    tr = util.TraceHull( tr )
-	
-	local tr, vm, muzzle, effectdata
-	vm = self.Owner:GetViewModel()
-	local trace = self.Owner:GetEyeTrace()
-	local hit = trace.HitPos
-	vstr = tostring(self.Weapon)
+	if (!SERVER) then return end 
+	local hit = self.Owner:GetEyeTrace().HitPos
 	local MuzzlePos = self.Owner:GetShootPos() + (self.Owner:GetRight() * 11.5) + (self.Owner:GetUp() * -8.25) + (self.Owner:GetForward() * 36)
-	self:lase(vstr, 0, MuzzlePos, hit, 1)
-	self:lase(vstr, 0, MuzzlePos, hit, 0)
-//	self.Owner:ViewPunch( Angle( math.random(-.02, .02), math.random(-.015, .015), math.random(-.02, .02) ) )
+	self:lase(0, 0, MuzzlePos, hit, 0)
 	self:ShootEffects()
- 
 	end
 
 function SWEP:SecondaryAttack()

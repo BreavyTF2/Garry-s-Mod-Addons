@@ -1,0 +1,15 @@
+VertexlitGeneric
+{
+	$basetexture	"models\HDTF\mitchell3\boot"
+	$bumpmap	"models\HDTF\mitchell3\boot_normal"
+
+	$phong		1
+	$phongtint	"[ 1 1 1 ]"
+	$phongboost	3
+	$phongexponent	8
+	$phongfresnelranges "[.1 .1 .5 ]"	
+
+	$rimlight            	   1
+	$rimlightexponent       3
+	$rimlightboost          .5		
+}

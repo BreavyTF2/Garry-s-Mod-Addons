@@ -1,0 +1,8 @@
+eyes
+{
+	$basetexture	"models\HDTF\mitchell3\mitchell_head\eye"
+	$iris		"models\HDTF\mitchell3\mitchell_head\eye"
+
+	$nodecal	1
+	$halflambert	1
+}

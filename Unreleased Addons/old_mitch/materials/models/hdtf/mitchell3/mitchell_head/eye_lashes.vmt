@@ -1,0 +1,6 @@
+"VertexLitGeneric"
+{
+	$baseTexture	"models\HDTF\mitchell3\mitchell_head\eye_lashes"
+	$translucent	1
+	$nocull		1
+}

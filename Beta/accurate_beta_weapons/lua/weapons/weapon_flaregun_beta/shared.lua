@@ -24,6 +24,7 @@ SWEP.BounceWeaponIcon = false
 SWEP.UseHands = true
 end
 local FlareFire = Sound( "Weapon_Flaregun.Single" )
+local FlareEmpty = Sound( "Weapon_Pistol.Empty" )
 local FlareReload = Sound( "Weapon_Flaregun.Reload" )
 sound.Add( {
 	name = "Weapon_Flaregun.Single",
@@ -57,7 +58,7 @@ if ( CLIENT ) then language.Add( "FlareRound_ammo", "Flares" ) end
 SWEP.Primary.Recoil            = 2
 SWEP.Primary.Sound = Sound( "weapons/flaregun/fire.wav" )
 SWEP.Primary.ClipSize = 1
-SWEP.Primary.DefaultClip = GetConVar( "sk_max_flare_round" ):GetInt()
+SWEP.Primary.DefaultClip = 5
 SWEP.Primary.Automatic = false
 SWEP.Primary.Delay = 1
 SWEP.Primary.Ammo = "FlareRound"
@@ -90,10 +91,11 @@ dmginfo:SetInflictor( self )
     if self.Flare:WaterLevel() > 0 then self.Flare:Fire( "Die", "0.1", 0 ) end
 	for k, v in pairs( ents.FindInSphere( self.Flare:GetPos(), 12 ) ) do
 		if IsValid( v ) and ( v:IsNPC() or v:IsPlayer() ) and v != self.Owner and v:Health() > 0 then
-			v:Ignite( 30, 1 )
+			v:Ignite( math.Rand( 14, 21 ), 1 )
 			if self.Flare:IsOnGround() then
 			else
 			v:TakeDamageInfo( dmginfo )
+			self.Flare:Fire( "Die", "0.5" )
 			 end
 			
 		end
@@ -103,10 +105,14 @@ end
 function SWEP:PrimaryAttack()
     if self:Clip1() <= 0 then
 	self:SendWeaponAnim(ACT_VM_DRYFIRE)
+		self.Weapon:SetNextPrimaryFire( CurTime() + 1)
+			self.Weapon:SetNextSecondaryFire( CurTime() + 1)
+		self.Weapon:EmitSound( FlareEmpty )
 		self:Reload()
 	return
 	end
 	self.Weapon:SetNextPrimaryFire( CurTime() + 1)
+	self.Weapon:SetNextSecondaryFire( CurTime() + 1)
 	self.Weapon:EmitSound( FlareFire )
 	self:LaunchFlare()	
 	self.Weapon:TakePrimaryAmmo( 1 )
@@ -118,9 +124,13 @@ end
 function SWEP:SecondaryAttack()
     if self:Clip1() <= 0 then
 		self:SendWeaponAnim(ACT_VM_DRYFIRE)
+		self.Weapon:SetNextPrimaryFire( CurTime() + 1)
+		self.Weapon:SetNextSecondaryFire( CurTime() + 1)
+		self.Weapon:EmitSound( FlareEmpty )
 		self:Reload()
 	return
 	end
+	self.Weapon:SetNextPrimaryFire( CurTime() + 1)
 	self.Weapon:SetNextSecondaryFire( CurTime() + 1)
 	self.Weapon:EmitSound( FlareFire )
 	self:LaunchFlare2()	
@@ -131,38 +141,35 @@ function SWEP:SecondaryAttack()
 end
 
 function SWEP:LaunchFlare()
-	local tracer = self.Owner:GetEyeTrace()
+	local ply_Ang = self.Owner:GetAimVector():Angle()
 	local Forward = self.Owner:EyeAngles():Forward()
 	local Right = self.Owner:EyeAngles():Right()
 	local Up = self.Owner:EyeAngles():Up()
 if SERVER then
 	self.Flare = ents.Create("env_flare")
-	self.Flare:SetPos( self.Owner:GetShootPos() + Forward * 18 + Right * 6 + Up * -3)
-	self.Flare:SetAngles( self.Owner:EyeAngles() )
-//	self.Flare:SetKeyValue( "scale", "5" )
+	self.Flare:SetPos( self.Owner:GetShootPos() + ply_Ang:Forward() * 18 + ply_Ang:Right() * 8 + ply_Ang:Up() * -2)
+	self.Flare:SetAngles( ply_Ang  )
 	self.Flare:Spawn()
+	self.Flare:Fire( "Launch", "1500", 0 )
+	self.Flare:SetFriction( 0.6 )
 	self.Flare:Activate()
-    self.Flare:Fire( "Launch", "1500", 0 )
-	self.Flare:Fire( "Die", "30" )
+
 end
 end
 function SWEP:LaunchFlare2()
-	local tracer = self.Owner:GetEyeTrace()
+	local ply_Ang = self.Owner:GetAimVector():Angle()
 	local Forward = self.Owner:EyeAngles():Forward()
 	local Right = self.Owner:EyeAngles():Right()
 	local Up = self.Owner:EyeAngles():Up()
+	
 if SERVER then
 	self.Flare = ents.Create("env_flare")
-	self.Flare:SetPos( self.Owner:GetShootPos() + Forward * 18 + Right * 6 + Up * -3)
-	self.Flare:SetAngles( self.Owner:EyeAngles() )
-//	self.Flare:SetKeyValue( "scale", "5" )
+	self.Flare:SetPos( self.Owner:GetShootPos() + ply_Ang:Forward() * 18 + ply_Ang:Right() * 8 + ply_Ang:Up() * -2)
+	self.Flare:SetAngles( ply_Ang  )
 	self.Flare:Spawn()
 	self.Flare:Fire( "Launch", "500", 0 )
 	self.Flare:SetFriction( 0.85 )
-	self.Flare:SetGravity( 1.0 )
-	self.Flare:SetMoveType( MOVETYPE_FLYGRAVITY, MOVECOLLIDE_FLY_BOUNCE )
 	self.Flare:Activate()
-	self.Flare:Fire( "Die", "30" )
 end
 end
 

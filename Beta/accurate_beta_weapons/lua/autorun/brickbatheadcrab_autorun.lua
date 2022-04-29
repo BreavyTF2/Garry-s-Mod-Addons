@@ -4,7 +4,8 @@ CreateConVar("sk_plr_dmg_iceaxe",10,0,"How much damage should the ice axe do")
 CreateConVar("sk_plr_dmg_iceaxe_alt",20,0,"How much damage should the secondary attack ice axe attack do.")
 CreateConVar("sk_plr_dmg_flare_round",12,0,"")
 CreateConVar("sk_npc_dmg_flare_round",2,0,"")
-CreateConVar("sk_max_flare_round",20,0,"")
+ 
+//list.Add( "NPCUsableWeapons", { class = "weapon_flaregun_beta", title = "Flare Gun" } ) //Perhaps one day...
 
 local Category = "Zombies + Enemy Aliens"
 

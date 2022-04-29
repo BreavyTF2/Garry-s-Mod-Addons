@@ -1,0 +1,15 @@
+"VertexLitGeneric"
+{
+	$baseTexture	"models\HDTF\mitchell3\pants"
+	$bumpmap	"models\HDTF\mitchell3\pants_normal"
+
+	$phong		1
+	$phongtint	"[ 1 1 1 ]"
+	$phongboost	0.24
+	$phongexponent	25
+	$phongfresnelranges "[ .5 .5 1 ]"
+	
+	$rimlight               1
+	$rimlightexponent       20
+	$rimlightboost          1	
+}

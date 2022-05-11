@@ -1,9 +1,0 @@
-"UnlitGeneric"
-{
-	"$basetexture" "HUD/swepicons/weapon_flaregun_beta"
-	 $color "[ 2.5 2 0 ]"
-	"$additive" "1"
-	"$vertexcolor" "1"
-	"$vertexalpha" "1"
-	"$ignorez"     "1"
-}

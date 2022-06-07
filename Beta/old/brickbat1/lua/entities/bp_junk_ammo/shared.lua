@@ -1,9 +1,0 @@
-ENT.Type = "anim"
-ENT.Base = "base_entity"
-ENT.PrintName = "Cremator Heads"
-ENT.Author = "Battlepope"
-ENT.Spawnable = true
-ENT.AdminSpawnable = true 
-ENT.Category = "Half-Life 2 Leak Ammo"
-ENT.AmmoType = "bp_junk"
-ENT.Amount = 1

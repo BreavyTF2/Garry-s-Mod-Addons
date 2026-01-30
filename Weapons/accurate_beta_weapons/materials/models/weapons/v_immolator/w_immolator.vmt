@@ -1,0 +1,15 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/weapons/v_immolator/w_immolator"
+	"$bumpmap" "models/weapons/v_immolator/w_immolator_normal"
+	"$selfillum" "1"
+
+"$normalmapalphaenvmapmask" 1
+"$envmap" "env_cubemap"
+	"$envmaptint" "[.03 .03 .02]"
+	
+	"$phong" "1"
+		"$phongexponent" "18"
+		"$phongboost"	"12"
+		"$phongfresnelranges"	"[.1 .15 .2]"
+}

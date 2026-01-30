@@ -1,0 +1,6 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "gm_construct/scenic_5_alpha"
+	"$surfaceprop" "default"
+	"$alphatest" "1"
+}

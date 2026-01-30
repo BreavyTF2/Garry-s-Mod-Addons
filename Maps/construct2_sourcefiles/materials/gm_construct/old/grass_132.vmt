@@ -1,0 +1,10 @@
+"WorldVertexTransition"
+{
+	"$basetexture" "maxofs2d/grass"
+	"$surfaceprop" "grass"
+	"$surfaceprop2" "grass"
+	"$detail" "gm_construct/grass_clouds"
+	"$detailblendfactor" "0.5"
+	"$detailtint" "0.75 1 0.75"
+	"$detailscale" "0.12"
+}
